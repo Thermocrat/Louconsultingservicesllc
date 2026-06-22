@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Louisville Consulting Services LLC pricing and packages. Dedicated Virtual Assistant management starting at $1,500/month with ongoing retainer support." />
+  <title>Packages & Pricing — Louisville Consulting Services LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1B2A4A;
+      --navy-mid:   #243558;
+      --navy-light: #2D3F5E;
+      --blue:       #4A7FC1;
+      --blue-light: #7AADD4;
+      --white:      #FFFFFF;
+      --off-white:  #F4F6FA;
+      --text-muted: #8AADCC;
+      --text-dark:  #1B2A4A;
+      --green:      #4fc38a;
+      --font-display: 'Sora', sans-serif;
+      --font-body:    'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid var(--navy-light);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-badge {
+      width: 38px;
+      height: 38px;
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-name {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover { background: #3a6fad !important; }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--navy);
+      padding: 120px 2rem 72px;
+      text-align: center;
+      position: relative;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--blue);
+    }
+
+    .page-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(74, 127, 193, 0.12);
+      border: 1px solid rgba(74, 127, 193, 0.3);
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .page-header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section { padding: 80px 2rem; }
+
+    /* HOW IT WORKS TIMELINE */
+    .timeline-section { background: var(--off-white); }
+
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: #5a7a9a;
+      max-width: 540px;
+      margin-bottom: 52px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 0 24px;
+      position: relative;
+    }
+
+    .timeline-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline-dot {
+      width: 48px;
+      height: 48px;
+      background: var(--navy);
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue);
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .timeline-line {
+      width: 2px;
+      flex: 1;
+      background: var(--navy-light);
+      margin: 4px 0;
+      min-height: 32px;
+    }
+
+    .timeline-item:last-child .timeline-line { display: none; }
+
+    .timeline-content {
+      background: var(--white);
+      border: 1px solid #dde6f0;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+
+    .timeline-phase {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .timeline-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      font-size: 14px;
+      color: #5a7a9a;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .timeline-price {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .timeline-price-sub {
+      font-size: 13px;
+      color: #5a7a9a;
+      margin-left: 6px;
+    }
+
+    /* PACKAGES GRID */
+    .packages-section { background: var(--white); }
+
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    .package-card {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--navy-light);
+    }
+
+    .package-card.featured {
+      border: 2px solid var(--blue);
+    }
+
+    .package-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blue);
+    }
+
+    .package-card.featured::before {
+      background: var(--green);
+    }
+
+    .package-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .badge-start { background: rgba(74,127,193,0.15); color: var(--blue-light); }
+    .badge-featured { background: rgba(79,195,138,0.15); color: var(--green); }
+    .badge-addon { background: rgba(138,173,204,0.1); color: var(--text-muted); }
+
+    .package-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .package-price {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+
+    .package-price sup {
+      font-size: 1.1rem;
+      font-weight: 600;
+      vertical-align: super;
+    }
+
+    .package-price-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .package-divider {
+      border: none;
+      border-top: 1px solid var(--navy-light);
+      margin: 20px 0;
+    }
+
+    .package-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .package-includes {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .package-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .package-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #a8c8e0;
+      line-height: 1.5;
+    }
+
+    .check {
+      color: var(--blue);
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .check-green { color: var(--green); }
+
+    .package-cta {
+      display: block;
+      text-align: center;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cta-blue { background: var(--blue); color: var(--white); }
+    .cta-blue:hover { background: #3a6fad; transform: translateY(-1px); }
+
+    .cta-green { background: var(--green); color: #0d2e1c; }
+    .cta-green:hover { background: #3daa73; transform: translateY(-1px); }
+
+    .cta-outline { background: transparent; color: var(--white); border: 1px solid var(--navy-light); }
+    .cta-outline:hover { border-color: var(--blue-light); transform: translateY(-1px); }
+
+    /* YOUR MARGIN BOX */
+    .margin-section { background: var(--navy); }
+
+    .margin-section .section-title { color: var(--white); }
+    .margin-section .section-sub { color: var(--text-muted); }
+    .margin-section .section-eyebrow { color: var(--blue); }
+
+    .margin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+      background: var(--navy-light);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .margin-cell {
+      background: var(--navy-mid);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .margin-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .margin-value {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .margin-value.green { color: var(--green); }
+
+    .margin-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* FAQ */
+    .faq-section { background: var(--off-white); }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 760px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid #dde6f0;
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+
+    .faq-item h4 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 14px;
+      color: #5a7a9a;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .cta-section { background: var(--white); text-align: center; }
+
+    .cta-box {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 64px 48px;
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--blue);
+    }
+
+    .cta-box h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: #3a6fad; transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--navy-light);
+      padding: 32px 2rem;
+      text-align: center;
+    }
+
+    .footer-logo { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .footer-tagline { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--blue-light); }
+    .footer-copy { font-size: 12px; color: #4A6A8A; }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .page-header { padding: 100px 1.25rem 56px; }
+      section { padding: 56px 1.25rem; }
+      .cta-box { padding: 40px 24px; }
+      .timeline-item { grid-template-columns: 40px 1fr; gap: 0 16px; }
+      .timeline-dot { width: 40px; height: 40px; font-size: 12px; }
+      .package-card { padding: 28px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-badge">LCS</div>
+      <span class="nav-name">Louisville Consulting Services</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#why">Why Us</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="page-eyebrow">Transparent Pricing</span>
+    <h1>Packages built to save you money<br />from day one.</h1>
+    <p>No hidden fees. No long-term contracts. A dedicated VA managed by us, at a fraction of the cost of a full-time hire.</p>
+  </div>
+
+  <!-- HOW IT WORKS TIMELINE -->
+  <section class="timeline-section">
+    <div class="container">
+      <p class="section-eyebrow">How It Works</p>
+      <h2 class="section-title">A model built around your long-term success.</h2>
+      <p class="section-sub">We start by doing the heavy lifting. As your business stabilizes, your cost drops — because that's what's fair.</p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-phase">Phase 1 — Months 1 to 6</div>
+            <h3>Full VA Management</h3>
+            <p>We source your VA, build your systems, document your processes, and manage performance. You get a dedicated full-time VA without any of the HR headaches. If something isn't working, we fix it.</p>
+            <div>
+              <span class="timeline-price">$1,500</span>
+              <span class="timeline-price-sub">/ month &mdash; 40 hrs/week dedicated VA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-phase">Phase 2 — Month 3 to 6 onward</div>
+            <h3>Retainer Support</h3>
+            <p>Once your VA is running smoothly, you transition to a low-cost retainer. You pay your VA directly at their rate. We stay on as your safety net — available for check-ins, questions, or if you ever need to make a change.</p>
+            <div>
+              <span class="timeline-price">$200</span>
+              <span class="timeline-price-sub">/ month retainer + VA's direct rate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <div class="timeline-dot">+</div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-phase">As Needed</div>
+            <h3>Additional Services</h3>
+            <p>Need another VA? Want to expand into a new function? We're here. Additional recruiting and placement is available at discounted rates for existing clients.</p>
+            <div>
+              <span class="timeline-price">$50</span>
+              <span class="timeline-price-sub">/ hr recruiting &nbsp;&nbsp;&bull;&nbsp;&nbsp; VA rate + $300/mo for additional placement</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages-section" id="packages">
+    <div class="container">
+      <p class="section-eyebrow">Packages</p>
+      <h2 class="section-title">Pick where you're starting.</h2>
+      <p class="section-sub">Every client starts with Phase 1. After 3–6 months you transition to the retainer — saving even more.</p>
+
+      <div class="packages-grid">
+
+        <!-- Phase 1 -->
+        <div class="package-card featured">
+          <span class="package-badge badge-featured">Most Popular &mdash; Start Here</span>
+          <h3>Full VA Management</h3>
+          <div class="package-price"><sup>$</sup>1,500</div>
+          <div class="package-price-note">per month &mdash; Months 1–6</div>
+          <hr class="package-divider" />
+          <p class="package-desc">Your business gets a dedicated, full-time Virtual Assistant — 40 hours per week. We handle sourcing, onboarding, process setup, and ongoing management so you don't have to.</p>
+          <div class="package-includes">What's included</div>
+          <ul class="package-features">
+            <li><span class="check check-green">✓</span> Dedicated VA — 40 hrs/week, full time</li>
+            <li><span class="check check-green">✓</span> Same-day VA sourcing & placement</li>
+            <li><span class="check check-green">✓</span> VA role can be: social media, bookkeeping, CRM, email, or administrative support</li>
+            <li><span class="check check-green">✓</span> Systems and process documentation</li>
+            <li><span class="check check-green">✓</span> Ongoing performance management</li>
+            <li><span class="check check-green">✓</span> VA replacement if performance issues arise</li>
+            <li><span class="check check-green">✓</span> No payroll taxes, benefits, or HR overhead</li>
+            <li><span class="check check-green">✓</span> No long-term contract</li>
+          </ul>
+          <a href="index.html#contact" class="package-cta cta-green">Get Started Today</a>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="package-card">
+          <span class="package-badge badge-start">Phase 2 — After 3–6 Months</span>
+          <h3>Retainer Support</h3>
+          <div class="package-price"><sup>$</sup>200</div>
+          <div class="package-price-note">per month + your VA's direct rate</div>
+          <hr class="package-divider" />
+          <p class="package-desc">Once your VA is running smoothly, your cost drops significantly. You pay your VA directly, and we stay on as your support system — available when you need us.</p>
+          <div class="package-includes">What's included</div>
+          <ul class="package-features">
+            <li><span class="check">✓</span> 2 check-in or support calls per month</li>
+            <li><span class="check">✓</span> Questions, guidance, and troubleshooting</li>
+            <li><span class="check">✓</span> Safety net if your VA has issues</li>
+            <li><span class="check">✓</span> Process updates as your business evolves</li>
+            <li><span class="check">✓</span> Priority access for additional services</li>
+          </ul>
+          <a href="index.html#contact" class="package-cta cta-blue">Learn More</a>
+        </div>
+
+        <!-- Add-on -->
+        <div class="package-card">
+          <span class="package-badge badge-addon">Add-On Services</span>
+          <h3>Additional VA Placement</h3>
+          <div class="package-price" style="font-size: 1.6rem;">VA rate <span style="color: var(--blue); font-size: 1.1rem;">+ $300</span></div>
+          <div class="package-price-note">per month &mdash; existing clients only</div>
+          <hr class="package-divider" />
+          <p class="package-desc">Need to expand your team or add a second VA for a different function? We source and place additional VAs at a discounted rate for existing clients.</p>
+          <div class="package-includes">What's included</div>
+          <ul class="package-features">
+            <li><span class="check">✓</span> New VA sourced and vetted</li>
+            <li><span class="check">✓</span> $50/hr recruiting fee (discounted rate)</li>
+            <li><span class="check">✓</span> Role setup and onboarding</li>
+            <li><span class="check">✓</span> Ongoing management included in the $300/mo</li>
+            <li><span class="check">✓</span> Any VA function: social, bookkeeping, admin, CRM</li>
+          </ul>
+          <a href="index.html#contact" class="package-cta cta-outline">Ask Us About This</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MARGIN BREAKDOWN -->
+  <section class="margin-section">
+    <div class="container">
+      <p class="section-eyebrow">The Value Breakdown</p>
+      <h2 class="section-title" style="color: var(--white);">What you're saving vs. a full-time hire.</h2>
+      <p class="section-sub" style="color: var(--text-muted); margin-bottom: 48px;">A full-time employee costs far more than their salary. Here's what the real comparison looks like.</p>
+      <div class="margin-grid">
+        <div class="margin-cell">
+          <div class="margin-label">Full-time employee</div>
+          <div class="margin-value">$45K+</div>
+          <div class="margin-sub">per year (salary + taxes + benefits)</div>
+        </div>
+        <div class="margin-cell">
+          <div class="margin-label">Phase 1 — LCS managed VA</div>
+          <div class="margin-value">$18K</div>
+          <div class="margin-sub">per year ($1,500/mo × 12)</div>
+        </div>
+        <div class="margin-cell">
+          <div class="margin-label">Phase 2 — Retainer only</div>
+          <div class="margin-value">$2,400</div>
+          <div class="margin-sub">per year ($200/mo retainer)</div>
+        </div>
+        <div class="margin-cell">
+          <div class="margin-label">Your savings</div>
+          <div class="margin-value green">$27K+</div>
+          <div class="margin-sub">per year vs. a full-time hire</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <p class="section-eyebrow">Common Questions</p>
+      <h2 class="section-title">Straight answers.</h2>
+      <p class="section-sub" style="margin-bottom: 40px;">No fluff. If you have a question not listed here, just reach out.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>What can my VA actually do?</h4>
+          <p>Whatever your business needs most. Common functions include social media management, bookkeeping, CRM and email management, scheduling, invoice follow-up, data entry, and general administrative support. We match the VA to your specific needs during onboarding.</p>
+        </div>
+        <div class="faq-item">
+          <h4>How fast can I get a VA?</h4>
+          <p>Often same day. We have an established sourcing network and move quickly once we understand what you need. In most cases you'll have a qualified candidate the same day you decide to move forward.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if my VA isn't performing?</h4>
+          <p>That's exactly why we're here. During Phase 1 we manage performance and step in if something isn't working. If a replacement is needed, we handle it — at no additional cost to you.</p>
+        </div>
+        <div class="faq-item">
+          <h4>When do I transition from Phase 1 to Phase 2?</h4>
+          <p>Typically between months 3 and 6, once your VA is running smoothly and your systems are documented. The timing depends on your situation — we'll discuss it together and make the transition when it makes sense for your business.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Is there a long-term contract?</h4>
+          <p>No. We earn your continued business by delivering results, not by locking you in. You can cancel at any time.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if I need more than 2 calls a month on the retainer?</h4>
+          <p>If you need additional support beyond what's included in the retainer, we're available at $50/hour. If you find yourself needing frequent help, it might make sense to discuss adding a second VA or expanding the scope — we'll talk through the options honestly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Ready to get your first VA in place?</h2>
+        <p>Let's talk about what your business needs. No pressure, no obligation — just a straight conversation about whether this is the right fit.</p>
+        <a href="index.html#contact" class="btn-primary">Send Us a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Louisville Consulting Services LLC</div>
+    <div class="footer-tagline">Fractional ops support &amp; skilled VA placement for contractors</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Louisville Consulting Services LLC &mdash; Louisville, KY</div>
+  </footer>
+
+</body>
+</html>
