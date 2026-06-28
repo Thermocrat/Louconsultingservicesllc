@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Louisville Consulting Services LLC builds custom, affordable landing pages and SEO solutions for small local businesses." />
+  <title>Louisville Consulting Services LLC — Web Design & SEO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:       #080C14;
+      --dark:        #0D1320;
+      --dark-card:   #111827;
+      --dark-border: #1E2D45;
+      --gold:        #E8B84B;
+      --gold-dim:    #A07D2A;
+      --gold-glow:   rgba(232, 184, 75, 0.15);
+      --white:       #FFFFFF;
+      --off-white:   #E8EDF5;
+      --muted:       #6B7FA0;
+      --font-display: 'Sora', sans-serif;
+      --font-body:    'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--off-white);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(8, 12, 20, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--dark-border);
+      padding: 0 2.5rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-badge {
+      width: 40px;
+      height: 40px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--black) !important;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      font-size: 13px !important;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.88 !important; color: var(--black) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 2rem 100px;
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(232,184,75,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(232,184,75,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,184,75,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 820px; }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(232,184,75,0.3);
+      background: rgba(232,184,75,0.06);
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 32px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .gold { color: var(--gold); }
+
+    .hero h1 .outline {
+      -webkit-text-stroke: 1px var(--gold);
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+      padding: 15px 36px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-block;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-gold:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 15px 36px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--dark-border);
+      transition: border-color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+    /* STAT BAR */
+    .stat-bar {
+      background: var(--dark-card);
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
+      padding: 32px 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--gold);
+      display: block;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* SECTIONS */
+    section { padding: 100px 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      flex: 1;
+      max-width: 40px;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 60px;
+    }
+
+    /* PROBLEM */
+    .problem { background: var(--dark); }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+      background: var(--dark-border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .problem-card {
+      background: var(--dark-card);
+      padding: 36px 28px;
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .problem-card:hover { background: #151e2e; }
+
+    .problem-card-icon {
+      font-size: 28px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .problem-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .problem-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* SERVICES */
+    .services { background: var(--black); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--dark-card);
+      border-radius: 16px;
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-4px);
+    }
+
+    .service-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(145deg, #151e2e 0%, #0f1720 100%);
+    }
+
+    .service-card.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: 0; right: 0;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 5px 14px;
+      border-radius: 0 16px 0 10px;
+    }
+
+    .service-number {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .service-price {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+      letter-spacing: -0.03em;
+    }
+
+    .service-price-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .service-divider {
+      border: none;
+      border-top: 1px solid var(--dark-border);
+      margin-bottom: 20px;
+    }
+
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--off-white);
+    }
+
+    .service-features li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    /* HOW IT WORKS */
+    .how { background: var(--dark); }
+
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .step-card {
+      padding: 0 24px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      background: var(--dark-card);
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--gold);
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-card h4 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* WHY US */
+    .why { background: var(--black); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .why-item {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+
+    .why-item:hover { border-color: var(--gold-dim); }
+
+    .why-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .why-item h4 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .why-item p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--dark);
+      text-align: center;
+      padding: 100px 2rem;
+    }
+
+    .cta-box {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .cta-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(232,184,75,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-box h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 40px;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    .cta-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--muted);
+      position: relative;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark-card);
+      border-top: 1px solid var(--dark-border);
+      padding: 40px 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy { font-size: 12px; color: #3a4a60; }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .hero { padding: 120px 1.25rem 80px; min-height: auto; }
+      section { padding: 72px 1.25rem; }
+      .stat-bar { gap: 2.5rem; padding: 28px 1.25rem; }
+      .steps-row::before { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-badge">LCS</div>
+      <span class="nav-name">Louisville Consulting Services</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">Process</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="contact.html#consult-form" class="nav-cta">Get a Free Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Louisville, KY &mdash; Built for Small Business</div>
+      <h1>Your Business Deserves<br />a <span class="gold">Website That Works</span></h1>
+      <p class="hero-sub">Custom landing pages and local SEO that get your business found — without the agency price tag. Flat rates, no contracts, real results.</p>
+      <div class="hero-actions">
+        <a href="contact.html#consult-form" class="btn-gold">Get a Free Quote</a>
+        <a href="#services" class="btn-outline">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="stat-item">
+      <span class="stat-number">$500</span>
+      <span class="stat-label">Landing page flat rate</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">$150</span>
+      <span class="stat-label">Monthly retainer</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">0</span>
+      <span class="stat-label">Long-term contracts</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Local</span>
+      <span class="stat-label">Louisville, KY based</span>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <p class="section-eyebrow">The Problem</p>
+      <h2 class="section-title">Most local businesses are<br />invisible online.</h2>
+      <p class="section-sub">You don't need a $10,000 agency. You need something that works — built by someone who actually gives a damn about your results.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <span class="problem-card-icon">🌐</span>
+          <h3>No website or an outdated one</h3>
+          <p>Customers Google you before they call. If they can't find you — or don't like what they see — they move on to your competitor.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-icon">📍</span>
+          <h3>Google isn't showing you</h3>
+          <p>Without proper optimization, your business won't rank for local searches — even when customers are looking for exactly what you offer.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-icon">💸</span>
+          <h3>Agencies charge too much</h3>
+          <p>Most web agencies quote $5,000–$15,000 for a small business site. That's not realistic — and it's usually more than you need.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-icon">📵</span>
+          <h3>No support after launch</h3>
+          <p>Templates and DIY builders leave you on your own. We stay available so you always have someone in your corner.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-icon">📅</span>
+          <h3>4 years of hands-on experience</h3>
+          <p>We bring 4 years of real-world website and marketing experience to every project — not theory, not guesswork. Strategies that have actually worked for local businesses.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-icon">📍</span>
+          <h3>We know this market</h3>
+          <p>We're a local Louisville company. We understand the Kentucky market, local search behavior, and what it takes to stand out in your neighborhood — not just online in general.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-icon">🤝</span>
+          <h3>Every project is personal</h3>
+          <p>You're not dealing with a big agency that hands you off to a junior. You work directly with the person you hired — start to finish, every time.</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-icon">🎯</span>
+          <h3>Built to convert, not just look good</h3>
+          <p>A pretty site that doesn't get you leads is worthless. Everything we build is designed to turn visitors into customers — not just impress them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section-eyebrow">Pricing</p>
+      <h2 class="section-title">Transparent pricing.<br />No surprises.</h2>
+      <p class="section-sub">Three services. Every price listed upfront. No discovery calls just to get a number.</p>
+      <div class="services-grid">
+
+        <div class="service-card featured">
+          <div class="service-number">Service 01</div>
+          <div class="service-price">$500</div>
+          <div class="service-price-note">Flat rate &mdash; one time</div>
+          <h3>Custom Landing Page</h3>
+          <p>A clean, professional, mobile-ready landing page built for your business. Not a template — custom designed to convert visitors into customers.</p>
+          <hr class="service-divider" />
+          <ul class="service-features">
+            <li>Custom design — your brand, your style</li>
+            <li>Mobile responsive out of the box</li>
+            <li>Contact form included</li>
+            <li>Fast loading and optimized</li>
+            <li>Hosted and live</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">Service 02</div>
+          <div class="service-price">$500–$1K</div>
+          <div class="service-price-note">One-time project fee</div>
+          <h3>SEO & Google Visibility</h3>
+          <p>We optimize your Schema markup, E-E-A-T signals, and Google Business Profile so local customers can actually find you in search results.</p>
+          <hr class="service-divider" />
+          <ul class="service-features">
+            <li>Schema markup implementation</li>
+            <li>E-E-A-T optimization</li>
+            <li>Google Business Profile setup</li>
+            <li>Search indexing & submission</li>
+            <li>Local SEO foundation</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">Service 03</div>
+          <div class="service-price">$150<span style="font-size:1rem;font-weight:500">/mo</span></div>
+          <div class="service-price-note">No contract &mdash; cancel anytime</div>
+          <h3>Monthly Retainer</h3>
+          <p>Stay supported after your project wraps. Up to 2 calls per month for questions, updates, or guidance. Walk away whenever you want.</p>
+          <hr class="service-divider" />
+          <ul class="service-features">
+            <li>Up to 2 calls per month</li>
+            <li>Questions & guidance</li>
+            <li>Minor content updates</li>
+            <li>No long-term commitment</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="container">
+      <p class="section-eyebrow">Process</p>
+      <h2 class="section-title">Simple from start to finish.</h2>
+      <p class="section-sub">No jargon, no long timelines. Four steps and you're live.</p>
+      <div class="steps-row">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Free Consultation</h4>
+          <p>We talk about your business and what you actually need. Honest assessment, no pitch.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>We Build It</h4>
+          <p>You see a draft before anything goes live. Changes are included until you're happy.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>You Go Live</h4>
+          <p>Site published, indexed, and optimized. We confirm everything works before handoff.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Stay Supported</h4>
+          <p>Optional $150/month retainer keeps us in your corner whenever you need us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why" id="why">
+    <div class="container">
+      <p class="section-eyebrow">Why Us</p>
+      <h2 class="section-title">Local. Affordable.<br />No nonsense.</h2>
+      <p class="section-sub">We work with small local businesses because every business deserves a professional online presence — not just the ones with big budgets.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="why-icon">💰</span>
+          <div>
+            <h4>Flat, transparent pricing</h4>
+            <p>No surprise invoices. No scope creep charges. You know exactly what you're paying before we start.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🎨</span>
+          <div>
+            <h4>Built for your business</h4>
+            <p>Every site is custom built around your brand and customers — not a template we grabbed off a shelf.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🤝</span>
+          <div>
+            <h4>Consult before we build</h4>
+            <p>We make sure the work fits your needs before anything starts. No selling you something you don't need.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🔓</span>
+          <div>
+            <h4>No long-term contracts</h4>
+            <p>Our retainer is month-to-month. If you don't need us anymore, you walk. Simple as that.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">📍</span>
+          <div>
+            <h4>Louisville based</h4>
+            <p>You're not dealing with an overseas agency. You're dealing with a real local person who picks up the phone.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">📈</span>
+          <div>
+            <h4>Results focused</h4>
+            <p>Everything we build is designed to help your customers find you and contact you. That's the only metric that matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-glow"></div>
+        <h2>Ready to get your business<br />found online?</h2>
+        <p>Free consultation. No pressure, no obligation. Just a straight conversation about what your business needs and whether we're the right fit.</p>
+        <a href="contact.html#consult-form" class="btn-gold">Get a Free Quote</a>
+        <p class="cta-note">Starting at $500 &mdash; flat rate &mdash; no contracts</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Louisville Consulting Services LLC</div>
+    <div class="footer-tagline">Custom landing pages &amp; SEO for small local businesses — Louisville, KY</div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#how">Process</a>
+      <a href="#why">Why Us</a>
+      <a href="contact.html#consult-form">Get a Quote</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Louisville Consulting Services LLC &mdash; Louisville, KY</div>
+  </footer>
+
+</body>
+</html>
